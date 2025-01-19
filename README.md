@@ -92,8 +92,8 @@ decentralized-todo/
 1. **Clone the repository**:
 
    ```sh
-   git clone https://github.com/snarayan1603/decentralized-todo.git
-   cd decentralized-todo
+   git clone https://github.com/snarayan1603/cluster-protocol-decentralised-to-do-app.git
+   cd cluster-protocol-decentralised-to-do-app
    ```
 
 2. **Install dependencies**:
