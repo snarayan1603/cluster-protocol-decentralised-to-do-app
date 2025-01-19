@@ -55,3 +55,31 @@ export const getProductivityAdvice = async ({
     console.error("Error fetching productivity advice:", error);
   }
 };
+
+export const sendRemindersForOverdueTasks = async (tasks) => {
+  const overdueTasks = tasks.filter((task) => {
+    const deadlineDate = new Date(task.deadline);
+    return !task.completed && deadlineDate < new Date();
+  });
+
+  if (overdueTasks.length === 0) {
+    console.log("No overdue tasks found.");
+    return;
+  }
+
+  const prompt = `I have the following overdue tasks: ${overdueTasks
+    .map(
+      (task) =>
+        ` Task "${task.title}" with description "${task.description}", priority ${task.priority}, progress ${task.progress}, deadline ${task.deadline}`
+    )
+    .join(", ")}. Please generate reminder messages for these tasks.`;
+
+  try {
+    const response = await createCompletion(chatAPI, prompt);
+    const reminders = response.choices[0].message.content;
+    console.log("Reminder messages:", reminders);
+    return reminders; // Return the reminder messages
+  } catch (error) {
+    console.error("Error generating reminders:", error);
+  }
+};

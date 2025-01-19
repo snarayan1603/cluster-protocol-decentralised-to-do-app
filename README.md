@@ -17,6 +17,7 @@ This is a decentralized to-do application built using **React**, **Node.js**, **
 decentralized-todo/
 ├── backend/
     ├── ai/
+        |--backgroundJob.js
 │   │   └── ai.js
     ├── credentials/
 │   │   └── TaskContract.json

@@ -5,6 +5,7 @@ import taskRoutes from "./routes/TaskRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import notificationRoutes from "./routes/notificationRoute.js";
 import aiRoutes from "./routes/aiRoutes.js";
+import "./ai/backgroundJob.js";
 
 config();
 
