@@ -22,7 +22,7 @@ const removeExpiredSubscription = (subscription) => {
 
 // Configure the web-push library
 webPush.setVapidDetails(
-  "mailto:  mr.singh160320@gmail.com", // Your email here
+  "mailto:mr.singh160320@gmail.com", // Your email here
   publicVapidKey,
   privateVapidKey
 );
